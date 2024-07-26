@@ -1,7 +1,10 @@
 import brainwave from "./brainwave.svg";
 import check from "./check.svg";
+import sitelogo from "./lexbot-site-logo.svg";
+import lexbotSynbol from "./lexbot-symbol.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
-import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
+import lexbotLogo from "./lexbot-logo.svg";
+
 import play from "./play.svg";
 import gradient from "./gradient.png";
 import smallSphere from "./4-small.png";
@@ -13,28 +16,40 @@ import homeSmile from "./home-smile.svg";
 import file02 from "./file-02.svg";
 import searchMd from "./search-md.svg";
 import plusSquare from "./plus-square.svg";
-import recording03 from "./recording-03.svg";
-import recording01 from "./recording-01.svg";
-import disc02 from "./disc-02.svg";
-import chromecast from "./chrome-cast.svg";
-import sliders04 from "./sliders-04.svg";
+import pdf from "./pdf-icon.png";
+import word from "./word-con.png";
+
+import chat from "./chat-icon.png";
+import email from "./email-icon.png";
 import loading from "./loading.png";
 import background from "./background.jpg";
 
 import curve from "./hero/curve.png";
-import robot from "./hero/robot.jpg";
+import robot from "./hero/robot2.jpg";
 import heroBackground from "./hero/hero-background.jpg";
 
-import curve1 from "./collaboration/curve-1.svg";
-import curve2 from "./collaboration/curve-2.svg";
-import discord from "./collaboration/discord.png";
-import figma from "./collaboration/figma.png";
-import framer from "./collaboration/framer.png";
-import notion from "./collaboration/notion.png";
-import photoshop from "./collaboration/photoshop.png";
-import protopie from "./collaboration/protopie.png";
-import raindrop from "./collaboration/raindrop.png";
-import slack from "./collaboration/slack.png";
+import curve1 from "./workspace/curve-1.svg";
+import curve2 from "./workspace/curve-2.svg";
+import discord from "./workspace/discord.png";
+import figma from "./workspace/figma.png";
+import framer from "./workspace/framer.png";
+import notion from "./workspace/notion.png";
+import photoshop from "./workspace/photoshop.png";
+import protopie from "./workspace/protopie.png";
+import raindrop from "./workspace/raindrop.png";
+import slack from "./workspace/slack.png";
+
+import penal from "./workspace/penal.webp"
+import businessChart from "./workspace/businessChart.webp"
+import construction from "./workspace/construction.webp"
+import contract from "./workspace/contract.webp"
+import family from "./workspace/family.webp"
+import immigacion from "./workspace/immigacion.webp"
+import legalDocs from "./workspace/legalDocs.webp"
+import mercantil from "./workspace/mercantil.webp"
+
+import synbolW from "./lexbot-symbol.svg";
+import brainwaveWhiteSymbol from "./lexbot-white-symbol.svg";
 
 import service1 from "./services/service-1.png";
 import service2 from "./services/service-2.png";
@@ -67,6 +82,8 @@ import benefitIcon1 from "./benefits/icon-1.svg";
 import benefitIcon2 from "./benefits/icon-2.svg";
 import benefitIcon3 from "./benefits/icon-3.svg";
 import benefitIcon4 from "./benefits/icon-4.svg";
+import benefitIcon5 from "./benefits/icon-5.svg";
+import benefitIcon6 from "./benefits/icon-6.svg";
 import benefitImage2 from "./benefits/image-2.png";
 
 import discordBlack from "./socials/discord.svg";
@@ -76,11 +93,22 @@ import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
 export {
+  sitelogo,
+  lexbotSynbol,
+  penal,
+  businessChart,
+  construction,
+  contract,
+  family,
+  immigacion,
+  legalDocs,
+  mercantil,
   brainwave,
   check,
   check2,
   loading1,
   brainwaveSymbol,
+  lexbotLogo,
   brainwaveWhiteSymbol,
   play,
   gradient,
@@ -91,11 +119,11 @@ export {
   file02,
   searchMd,
   plusSquare,
-  recording03,
-  recording01,
-  disc02,
-  chromecast,
-  sliders04,
+  pdf,
+  word,
+  synbolW,
+  chat,
+  email,
   loading,
   background,
   curve,
@@ -138,6 +166,8 @@ export {
   benefitIcon2,
   benefitIcon3,
   benefitIcon4,
+  benefitIcon5,
+  benefitIcon6,
   benefitImage2,
   discordBlack,
   facebook,

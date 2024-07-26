@@ -1,11 +1,10 @@
 import Section from "./Section";
 import Heading from "./Heading";
 import { service1, service2, service3, check } from "../assets";
-import { brainwaveServices, brainwaveServicesIcons } from "../constants";
+import { lexbotServices, lexbotServicesIcons } from "../constants";
 import {
   PhotoChatMessage,
   Gradient,
-  VideoBar,
   VideoChatMessage,
 } from "./design/Services";
 
@@ -16,8 +15,8 @@ const Services = () => {
     <Section id="how-to-use">
       <div className="container">
         <Heading
-          title="Generative AI made for creators."
-          text="Brainwave unlocks the potential of AI-powered applications"
+          title="IA para abogados ganadores"
+          text="Lexbot libera el potencial de la inteligencia artificial para tus casos legales"
         />
 
         <div className="relative">
@@ -33,12 +32,13 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
+              <h4 className="h4 mb-4">Ver los Casos de Forma Inteligente</h4>
               <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+                Con LexBot, descubres más que los demás. Ahora puedes
+                identificar en tus casos:
               </p>
               <ul className="body-2">
-                {brainwaveServices.map((item, index) => (
+                {lexbotServices.map((item, index) => (
                   <li
                     key={index}
                     className="flex items-start py-4 border-t border-n-6"
@@ -65,32 +65,40 @@ const Services = () => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:px-10 pb-2">
+                <h4 className="h4 mb-0 text-lg">
+                  Análisis de Documentos
+                </h4>
                 <p className="body-2 mb-[3rem] text-n-3">
-                  Automatically enhance your photos using our AI app&apos;s
-                  photo editing feature. Try it now!
+                  LexBot analiza evidencias, sentencias, demandas y contratos.
+                  Proporcionando resúmenes detallados y recomendaciones,
+                  ayudándote a comprender y actuar eficientemente sobre cada
+                  documento legal.
                 </p>
               </div>
 
               <PhotoChatMessage />
             </div>
 
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[56rem]">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
+                <h4 className="h4 mb-4">
+                  Generación de Documentos Inteligentes
+                </h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                  The world’s most powerful AI photo and video art generation
-                  engine. What will you create?
+                  LexBot genera documentos legales en múltiples formatos: PDF,
+                  MS Word, y texto listo para copiar en el chat. Además, los
+                  documentos pueden enviarse por correo electrónico y SNE
+                  (Sistema de Notificación Electrónica).
                 </p>
 
                 <ul className="flex items-center justify-between">
-                  {brainwaveServicesIcons.map((item, index) => (
+                  {lexbotServicesIcons.map((item, index) => (
                     <li
                       key={index}
                       className={`rounded-2xl flex items-center justify-center ${
                         index === 2
-                          ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
+                          ? "w-[4rem] h-[4rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
                           : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
                       }`}
                     >
@@ -101,7 +109,7 @@ const Services = () => {
                             : ""
                         }
                       >
-                        <img src={item} width={24} height={24} alt={item} />
+                        <img src={item} width={36} height={36} alt={item} />
                       </div>
                     </li>
                   ))}
@@ -114,11 +122,23 @@ const Services = () => {
                   className="w-full h-full object-cover"
                   width={520}
                   height={400}
-                  alt="Scary robot"
+                  alt="Working Robot"
                 />
 
-                <VideoChatMessage />
-                <VideoBar />
+                <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:px-10 pb-2">
+                  <h4 className="h4 mb text-base">Correo Electrónico y SNE:</h4>
+                  <ul className="text-xs mb-0 text-n-3">
+                    <li>
+                      Correo Electrónico: Permite enviar documentos directamente
+                      desde la plataforma. <br />
+                    </li>
+                    <li>
+                      SNE: Un agente virtual de LexBot puede leer las
+                      notificaciones de la corte, resumirlas y enviarlas al
+                      abogado.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -1,15 +1,15 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
-import { brainwave } from "../assets";
-import { navigation } from "../constants";
+import { sitelogo } from "../assets";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const pathname = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -29,16 +29,27 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
+  const handleNavLinkClick = (url) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+
+    handleClick();
+    setTimeout(() => {
+      window.location.hash = url;
+    }, 100); // Delay to ensure the page has navigated to the home page
+  };
+
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={brainwave} width={190} height={40} alt="Brainwave" />
-        </a>
+        <Link className="block w-[12rem] xl:mr-8" to="/">
+          <img src={sitelogo} width={190} height={40} alt="Lexbot" />
+        </Link>
 
         <nav
           className={`${
@@ -46,36 +57,74 @@ const Header = () => {
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-            {navigation.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
-                  item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash
-                    ? "z-2 lg:text-n-1"
-                    : "lg:text-n-1/50"
-                } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
-              >
-                {item.title}
-              </a>
-            ))}
+            <a
+              href="#features"
+              onClick={() => handleNavLinkClick("#features")}
+              className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                location.hash === "#features"
+                  ? "z-2 lg:text-n-1"
+                  : "lg:text-n-1/50"
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+            >
+              Features
+            </a>
+            <a
+              href="#pricing"
+              onClick={() => handleNavLinkClick("#pricing")}
+              className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                location.hash === "#pricing"
+                  ? "z-2 lg:text-n-1"
+                  : "lg:text-n-1/50"
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+            >
+              Pricing
+            </a>
+            <a
+              href="#how-to-use"
+              onClick={() => handleNavLinkClick("#how-to-use")}
+              className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                location.hash === "#how-to-use"
+                  ? "z-2 lg:text-n-1"
+                  : "lg:text-n-1/50"
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+            >
+              How to Use
+            </a>
+            <a
+              href="#roadmap"
+              onClick={() => handleNavLinkClick("#roadmap")}
+              className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                location.hash === "#roadmap"
+                  ? "z-2 lg:text-n-1"
+                  : "lg:text-n-1/50"
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+            >
+              Roadmap
+            </a>
+            <Link
+              to="/contact"
+              className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                location.pathname === "/contact"
+                  ? "z-2 lg:text-n-1"
+                  : "lg:text-n-1/50"
+              } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+            >
+              Contact Us
+            </Link>
           </div>
 
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="#signup"
+        <Link
+          to="/create-account"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </a>
-        <Button className="hidden lg:flex" href="#login">
-          Sign in
-        </Button>
+        </Link>
+        <Link to="https://chat.lexbot.info/login">
+          <Button className="hidden lg:flex">Sign in</Button>
+        </Link>
 
         <Button
           className="ml-auto lg:hidden"
